@@ -1,13 +1,12 @@
 from pyspark.sql import SparkSession
-from util import *
+from src.Assignment1 import util
 spark = SparkSession.builder.getOrCreate()
 
-userDf = spark.read.csv("C:\\Users\\Suraj\\Desktop\\sparkfiles\\user.csv",
-                    inferSchema=True,header=True)
-transactionDf = spark.read.csv("C:\\Users\\Suraj\\Desktop\\sparkfiles\\transaction.csv",
-                     inferSchema=True,header=True)
-user_data(userDf,transactionDf)
-
+userDf = spark.read.csv("C:\\Users\\SurajJ\\PycharmProjects\\sparkassignmentnew\\files\\user.csv",inferSchema=True,header=True)
+transactionDf = spark.read.csv("C:\\Users\\SurajJ\\PycharmProjects\\sparkassignmentnew\\files\\transaction.csv",inferSchema=True,header=True)
+#util.user_data(userDf,transactionDf)
+#util.products(transactionDf)
+util.spending(transactionDf)
 
 
 
